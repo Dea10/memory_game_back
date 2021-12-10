@@ -1,7 +1,6 @@
 const Server = require('./models/server');
+require('dotenv').config();
 
-const port = 8080;
-
-const server = new Server(port);
+const server = new Server();
 
 server.listen();

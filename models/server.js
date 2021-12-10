@@ -3,9 +3,9 @@ const cors = require('cors');
 const { dbConnection } = require('../database/config');
 
 class Server {
-    constructor(port) {
+    constructor() {
         this.app = express();
-        this.port = port;
+        this.port = process.env.PORT;
         this.playersPath = '/api/players';
 
         // Database
@@ -33,7 +33,7 @@ class Server {
 
     listen() {
         this.app.listen(this.port, ()=> {
-            console.log(`Server listening at http://localhost:${this.port}`);
+            console.log(`Server listening at http://localhost:${process.env.PORT}`);
         })
     }
 }
